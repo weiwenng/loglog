@@ -1,8 +1,8 @@
 
-from .models import Todo
+from .models import Todo, Menu
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import TodoSerializer
+from .serializers import TodoSerializer, MenuSerializer
 
 
 class TodoViewSet(viewsets.ModelViewSet):
@@ -13,3 +13,8 @@ class TodoViewSet(viewsets.ModelViewSet):
     # optional permission class set permission level
     permission_classes = [permissions.AllowAny] #Coule be [permissions.IsAuthenticated]
     # permission_classes = [permissions.IsAuthenticated]
+
+class MenuViewSet(viewsets.ModelViewSet):
+    queryset = Menu.objects.all()
+    serializer_class=MenuSerializer
+    permission_classes = [permissions.AllowAny]

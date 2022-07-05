@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from warehouse.views import TodoViewSet
+from warehouse.views import TodoViewSet, MenuViewSet
 
 # create a new router
 router = routers.DefaultRouter()
 # register our viewsets
 router.register('todos', TodoViewSet) #register "/todos" routes
+router.register('menu', MenuViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

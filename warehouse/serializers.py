@@ -1,4 +1,4 @@
-from .models import Todo
+from .models import Menu, Todo
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -9,3 +9,8 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
         model = Todo
         # the fields that should be included in the serialized output
         fields = ['id', 'subject', 'details']
+
+class MenuSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Menu
+        fields = ['id', 'title']
