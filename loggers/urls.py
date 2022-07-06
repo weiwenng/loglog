@@ -23,7 +23,7 @@ router = routers.DefaultRouter()
 # register our viewsets
 router.register('todos', TodoViewSet) #register "/todos" routes
 router.register('menu', MenuViewSet)
-router.register('order', FoodListViewSet)
+router.register('foodlist', FoodListViewSet)
 router.register('order', OrderViewSet)
 
 urlpatterns = [
