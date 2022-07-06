@@ -16,5 +16,5 @@ class TodoViewSet(viewsets.ModelViewSet):
 
 class MenuViewSet(viewsets.ModelViewSet):
     queryset = Menu.objects.all()
-    serializer_class=MenuSerializer
+    serializer_class = MenuSerializer
     permission_classes = [permissions.AllowAny]

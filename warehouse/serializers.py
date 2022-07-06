@@ -11,6 +11,6 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'subject', 'details']
 
 class MenuSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
+    # class Meta:
         model = Menu
-        fields = ['id', 'title']
+        fields = ['id', 'title', 'minpax', 'price']
