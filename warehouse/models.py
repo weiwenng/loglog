@@ -9,3 +9,7 @@ class Menu(models.Model):
     title = models.CharField(max_length=100)
     minpax = models.IntegerField(default=25)
     price = models.IntegerField()
+
+class Order(models.Model):
+    category = models.CharField(max_length=100)
+    itemname = models.CharField(max_length=100)
