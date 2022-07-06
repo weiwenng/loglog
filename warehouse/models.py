@@ -12,17 +12,16 @@ class Menu(models.Model):
     price = models.IntegerField()
 
 class FoodList(models.Model):
-    # class Category(models.TextChoices):
-    #     NOODLES = 'Noodles', _('Noodles')
-    #     SANDWICH = 'Sandwich', _('Sandwich')
-    #     CHICKEN = 'Chicken', _('Chicken')
-    #     DIMSUM = 'Dimsum', _('Dimsum')
-    #     PASTRY = 'Pastry', _('Pastry')
-    #     DESSERT = 'Dessert', _('Dessert')
-    #     DRINKS = 'Drinks', _('Drinks')
+    class Category(models.TextChoices):
+        NOODLES = 'Noodles', _('Noodles')
+        SANDWICH = 'Sandwich', _('Sandwich')
+        CHICKEN = 'Chicken', _('Chicken')
+        DIMSUM = 'Dimsum', _('Dimsum')
+        PASTRY = 'Pastry', _('Pastry')
+        DESSERT = 'Dessert', _('Dessert')
+        DRINKS = 'Drinks', _('Drinks')
 
-    category = models.CharField(max_length=100)
-    # , choices=Category.choices, default=Category.DIMSUM)
+    category = models.CharField(max_length=100, choices=Category.choices, default=Category.DIMSUM)
     itemname = models.CharField(max_length=100)
 
 class Order(models.Model):
