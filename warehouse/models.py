@@ -22,8 +22,7 @@ class FoodList(models.Model):
         DRINKS = 'Drinks', _('Drinks')
 
     category = models.CharField(max_length=100, choices=Category.choices, default=Category.DIMSUM)
-    itemname = models.CharField(max_length=100)
+    itemname = models.CharField(max_length=100) 
 
 class Order(models.Model):
-    category = models.CharField(max_length=100)
-    itemname = models.CharField(max_length=100)
+    foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
