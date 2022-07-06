@@ -11,7 +11,15 @@ class Menu(models.Model):
     price = models.IntegerField()
 
 class FoodList(models.Model):
-    category = models.CharField(max_length=100)
+    CATEGORY_CHOICES = [
+        ('Dimsum', 'Dimsum'),
+        ('Chicken', 'Chicken'),
+        ('Pastry', 'Pastry'),
+        ('Sandwich', 'Sandwich'),
+        ('Dessert', 'Dessert'),
+        ('Drinks', 'Drinks'),
+    ]
+    category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='Dimsum')
     itemname = models.CharField(max_length=100)
 
 class Order(models.Model):
