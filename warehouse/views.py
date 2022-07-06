@@ -1,5 +1,5 @@
 
-from .models import Todo, Menu, Order
+from .models import FoodList, Todo, Menu, Order
 from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import OrderSerializer, TodoSerializer, MenuSerializer
@@ -17,6 +17,11 @@ class TodoViewSet(viewsets.ModelViewSet):
 class MenuViewSet(viewsets.ModelViewSet):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+    permission_classes = [permissions.AllowAny]
+
+class FoodListViewSet(viewsets.ModelViewSet):
+    queryset = FoodList.objects.all()
+    serializer_class = OrderSerializer
     permission_classes = [permissions.AllowAny]
 
 class OrderViewSet(viewsets.ModelViewSet):

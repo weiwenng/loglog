@@ -1,4 +1,4 @@
-from .models import Menu, Todo, Order
+from .models import Menu, Todo, Order, FoodList
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -14,6 +14,11 @@ class MenuSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Menu
         fields = ['id', 'title', 'minpax', 'price']
+
+class FoodListSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta: 
+        model = FoodList
+        fields = ['id', 'category', 'itemname']
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 

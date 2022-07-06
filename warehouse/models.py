@@ -10,6 +10,10 @@ class Menu(models.Model):
     minpax = models.IntegerField(default=25)
     price = models.IntegerField()
 
+class FoodList(models.Model):
+    category = models.CharField(max_length=100)
+    itemname = models.CharField(max_length=100)
+
 class Order(models.Model):
     category = models.CharField(max_length=100)
     itemname = models.CharField(max_length=100)
