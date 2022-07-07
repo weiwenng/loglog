@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+import datetime
 
 # Create your models here.
 class Todo(models.Model):
@@ -26,4 +27,13 @@ class FoodList(models.Model):
     itemname = models.CharField(max_length=100) 
 
 class Order(models.Model):
+    delivery_place = models.CharField(max_length=200, default="79 Anson Road")
+    delivery_date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
+    delivery_time = models.TimeField(auto_now=False, auto_now_add=False, default="19:00")
+    pax = models.IntegerField(default=25)
+
+    
+class OrdertoFoodList(models.Model):
     foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
+    # orders = models.ForeignKey(Order, on_delete=models.CASCADE)
+
