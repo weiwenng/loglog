@@ -13,7 +13,7 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
 class MenuSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Menu
-        fields = ['id', 'title', 'minpax', 'price']
+        fields = ['id', 'title', 'minpax', 'price', 'chosen']
 
 class FoodListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 
