@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from warehouse.views import OrderToFoodListViewSet, OrderViewSet, MenuViewSet, FoodListViewSet
+from warehouse.views import OrderViewSet, MenuViewSet, FoodListViewSet, OrderToFoodListViewSet
 
 # create a new router
 router = routers.DefaultRouter()

@@ -34,5 +34,5 @@ class Order(models.Model):
         
 class OrdertoFoodList(models.Model):
     foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
-    # orders = models.ForeignKey(Order, on_delete=models.CASCADE)
+    orders = models.ForeignKey(Order, on_delete=models.CASCADE)
 

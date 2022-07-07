@@ -1,8 +1,8 @@
 
-from .models import FoodList, OrdertoFoodList, Menu, Order
+from .models import FoodList, Menu, Order, OrdertoFoodList
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import OrderSerializer, OrdertoFoodListSerializer, MenuSerializer, FoodListSerializer
+from .serializers import OrderSerializer, MenuSerializer, FoodListSerializer, OrdertoFoodListSerializer
 
 
 # class TodoViewSet(viewsets.ModelViewSet):

@@ -1,4 +1,4 @@
-from .models import Menu, OrdertoFoodList, Order, FoodList
+from .models import Menu, Order, FoodList, OrdertoFoodList
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
