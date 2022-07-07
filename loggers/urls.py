@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from warehouse.views import OrderToFoodListViewSet, OrderViewSet, TodoViewSet, MenuViewSet, FoodListViewSet
+from warehouse.views import OrderToFoodListViewSet, OrderViewSet, MenuViewSet, FoodListViewSet
 
 # create a new router
 router = routers.DefaultRouter()
 # register our viewsets
-router.register(r'todos', TodoViewSet) #register "/todos" routes
+# router.register(r'todos', TodoViewSet) #register "/todos" routes
 router.register(r'menu', MenuViewSet)
 router.register(r'foodlist', FoodListViewSet)
 router.register(r'order', OrderViewSet)
