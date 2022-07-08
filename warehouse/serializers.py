@@ -13,7 +13,7 @@ from rest_framework import serializers
 class MenuSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Menu
-        fields = ['id', 'title', 'minpax', 'price', 'chosen']
+        fields = ['id', 'title', 'minpax', 'price']
 
 class FoodListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 

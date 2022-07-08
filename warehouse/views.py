@@ -15,7 +15,7 @@ from .serializers import OrderSerializer, MenuSerializer, FoodListSerializer, Or
 #     # permission_classes = [permissions.IsAuthenticated]
 
 class MenuViewSet(viewsets.ModelViewSet):
-    queryset = Menu.objects.all()
+    queryset = Menu.objects.all().order_by('id')
     serializer_class = MenuSerializer
     permission_classes = [permissions.AllowAny]
 
@@ -25,11 +25,11 @@ class FoodListViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
+    queryset = Order.objects.all().order_by('id')
     serializer_class = OrderSerializer
     permission_classes = [permissions.AllowAny]
 
 class OrderToFoodListViewSet(viewsets.ModelViewSet):
-    queryset = OrdertoFoodList.objects.all()
+    queryset = OrdertoFoodList.objects.all().order_by('orders')
     serializer_class = OrdertoFoodListSerializer
     permission_classes = [permissions.AllowAny]

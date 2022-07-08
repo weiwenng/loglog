@@ -11,7 +11,7 @@ class Menu(models.Model):
     title = models.CharField(max_length=100)
     minpax = models.IntegerField(default=25)
     price = models.IntegerField()
-    chosen = models.BooleanField(default=False)
+    # chosen = models.BooleanField(default=False)
 
 class FoodList(models.Model):
     class Category(models.TextChoices):
