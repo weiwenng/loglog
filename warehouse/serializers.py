@@ -23,7 +23,7 @@ class FoodListSerializer(serializers.HyperlinkedModelSerializer):
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Order
-        fields = ['id', 'pax', 'delivery_place', 'delivery_date', 'delivery_time']
+        fields = ['id', 'pax', 'delivery_place', 'delivery_date', 'delivery_time', 'menu']
 
 class OrdertoFoodListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 

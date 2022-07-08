@@ -31,6 +31,7 @@ class Order(models.Model):
     pax = models.IntegerField(default=25)
     delivery_place = models.CharField(max_length=200, default="79 Anson Road")
     delivery_date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
+    menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
         
 class OrdertoFoodList(models.Model):
     foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
