@@ -13,6 +13,8 @@ class Menu(models.Model):
     price = models.IntegerField()
     # chosen = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.title + ' courses'
 class FoodList(models.Model):
     class Category(models.TextChoices):
         NOODLES = 'Noodles', _('Noodles')
@@ -35,6 +37,7 @@ class Order(models.Model):
     delivery_place = models.CharField(max_length=200, default="79 Anson Road")
     delivery_date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+
 
         
 class OrdertoFoodList(models.Model):
