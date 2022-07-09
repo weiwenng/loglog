@@ -26,14 +26,21 @@ class FoodList(models.Model):
     category = models.CharField(max_length=100, choices=Category.choices, default=Category.DIMSUM)
     itemname = models.CharField(max_length=100) 
 
+    def __str__(self):
+        return self.itemname
+
 class Order(models.Model):
     delivery_time = models.TimeField(auto_now=False, auto_now_add=False, default="19:00")
     pax = models.IntegerField(default=25)
     delivery_place = models.CharField(max_length=200, default="79 Anson Road")
     delivery_date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
+
         
 class OrdertoFoodList(models.Model):
-    foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
     orders = models.ForeignKey(Order, on_delete=models.CASCADE)
+    foodlist = models.ForeignKey(FoodList, on_delete=models.CASCADE)
+    
+    def __str__(self): 
+        return 'Order' + self.orders + ': ' + self.foodlist
 
