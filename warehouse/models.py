@@ -16,16 +16,17 @@ class Menu(models.Model):
     def __str__(self):
         return self.title + ' courses'
 class FoodList(models.Model):
-    class Category(models.TextChoices):
-        NOODLES = 'Noodles', _('Noodles')
-        SANDWICH = 'Sandwich', _('Sandwich')
-        CHICKEN = 'Chicken', _('Chicken')
-        DIMSUM = 'Dimsum', _('Dimsum')
-        PASTRY = 'Pastry', _('Pastry')
-        DESSERT = 'Dessert', _('Dessert')
-        DRINKS = 'Drinks', _('Drinks')
+    # class Category(models.TextChoices):
+    #     NOODLES = 'Noodles', _('Noodles')
+    #     SANDWICH = 'Sandwich', _('Sandwich')
+    #     CHICKEN = 'Chicken', _('Chicken')
+    #     DIMSUM = 'Dimsum', _('Dimsum')
+    #     PASTRY = 'Pastry', _('Pastry')
+    #     DESSERT = 'Dessert', _('Dessert')
+    #     DRINKS = 'Drinks', _('Drinks')
 
-    category = models.CharField(max_length=100, choices=Category.choices, default=Category.DIMSUM)
+    # category = models.CharField(max_length=100, choices=Category.choices, default=Category.DIMSUM)
+    category = models.CharField(max_length=100)
     itemname = models.CharField(max_length=100) 
 
     def __str__(self):
