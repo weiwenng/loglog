@@ -52,6 +52,7 @@ class Logistics(models.Model):
     category = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
+    perpkt = models.IntegerField()
     quantity = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     base_limit = models.IntegerField(default=0)
