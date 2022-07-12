@@ -1,8 +1,8 @@
 
-from .models import FoodList, Menu, Order, OrdertoFoodList
+from .models import FoodList, Logistics, Menu, Order, OrdertoFoodList
 from rest_framework import viewsets
 from rest_framework import permissions
-from .serializers import OrderSerializer, MenuSerializer, FoodListSerializer, OrdertoFoodListSerializer
+from .serializers import LogisticsSerializer, OrderSerializer, MenuSerializer, FoodListSerializer, OrdertoFoodListSerializer
 
 
 # class TodoViewSet(viewsets.ModelViewSet):
@@ -33,3 +33,8 @@ class OrderToFoodListViewSet(viewsets.ModelViewSet):
     queryset = OrdertoFoodList.objects.all().order_by('orders')
     serializer_class = OrdertoFoodListSerializer
     permission_classes = [permissions.AllowAny]
+
+class LogisticsViewSet(viewsets.ModelViewSet):
+    queryset = Logistics.objects.all().order_by('logscategory')
+    serializer_class = LogisticsSerializer
+    permission_class = [permissions.AllowAny]

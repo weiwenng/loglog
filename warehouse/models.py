@@ -48,3 +48,14 @@ class OrdertoFoodList(models.Model):
     def __str__(self): 
         return 'Order' + self.orders + ': ' + self.foodlist
 
+class Logistics(models.Model):
+    logscategory = models.CharField(max_length=100)
+    logsname = models.CharField(max_length=100)
+    logsdescription = models.CharField(max_length=100)
+    logsquantity = models.IntegerField(default=0)
+    logsprice = models.DecimalField(max_digits=6, decimal_places=2)
+    logslimit = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.logsname
+
