@@ -38,8 +38,7 @@ class Order(models.Model):
     delivery_place = models.CharField(max_length=200, default="79 Anson Road")
     delivery_date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.date.today)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
-
-
+    logs_confirmed = models.BooleanField(default=False) 
         
 class OrdertoFoodList(models.Model):
     orders = models.ForeignKey(Order, on_delete=models.CASCADE)
