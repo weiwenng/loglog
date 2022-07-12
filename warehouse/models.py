@@ -63,3 +63,6 @@ class Logistics(models.Model):
 class OrdertoLogistics(models.Model):
     orders = models.ForeignKey(Order, on_delete=models.CASCADE)
     logistics = models.ForeignKey(Logistics, on_delete=models.CASCADE)
+    logsneeded = models.IntegerField();
+
+
