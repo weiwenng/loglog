@@ -60,3 +60,6 @@ class Logistics(models.Model):
     def __str__(self):
         return self.name
 
+class OrdertoLogistics(models.Model):
+    orders = models.ForeignKey(Order, on_delete=models.CASCADE)
+    logistics = models.ForeignKey(Logistics, on_delete=models.CASCADE)

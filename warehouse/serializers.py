@@ -1,4 +1,4 @@
-from .models import Logistics, Menu, Order, FoodList, OrdertoFoodList
+from .models import Logistics, Menu, Order, FoodList, OrdertoFoodList, OrdertoLogistics
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
@@ -33,4 +33,9 @@ class OrdertoFoodListSerializer(serializers.HyperlinkedModelSerializer):
 class LogisticsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 
         model = Logistics
+        fields = '__all__'
+
+class OrdertoLogisticsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta: 
+        model = OrdertoLogistics
         fields = '__all__'

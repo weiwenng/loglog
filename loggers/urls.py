@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from warehouse.views import LogisticsViewSet, OrderViewSet, MenuViewSet, FoodListViewSet, OrderToFoodListViewSet
+from warehouse.views import LogisticsViewSet, OrderToLogisticsViewSet, OrderViewSet, MenuViewSet, FoodListViewSet, OrderToFoodListViewSet
 
 # create a new router
 router = routers.DefaultRouter()
@@ -27,6 +27,7 @@ router.register(r'foodlist', FoodListViewSet)
 router.register(r'order', OrderViewSet)
 router.register(r'combined', OrderToFoodListViewSet)
 router.register(r'logistics', LogisticsViewSet)
+router.register(r'logsprep', OrderToLogisticsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
