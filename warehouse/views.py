@@ -20,7 +20,7 @@ class MenuViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
 
 class FoodListViewSet(viewsets.ModelViewSet):
-    queryset = FoodList.objects.all()
+    queryset = FoodList.objects.all().order_by('id')
     serializer_class = FoodListSerializer
     permission_classes = [permissions.AllowAny]
 
