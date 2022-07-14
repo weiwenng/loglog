@@ -35,7 +35,7 @@ class OrderToFoodListViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
 
 class LogisticsViewSet(viewsets.ModelViewSet):
-    queryset = Logistics.objects.all().order_by('category')
+    queryset = Logistics.objects.all().order_by('id')
     serializer_class = LogisticsSerializer
     permission_class = [permissions.AllowAny]
 
